@@ -10,16 +10,16 @@ public class LoginSteps {
 
     @Given("The User is on the login page")
     public void the_User_is_on_the_login_page() {
-        Runner.driver.get("LOGIN URI");//LOGIN URI
+        Runner.driver.get("");//LOGIN URI
     }
 
-    @When("The User enters {username} into the username field")
-    public void the_User_enters_notauser_into_the_username_field(String username) {
+    @When("The User enters {string} into the username field")
+    public void the_User_enters_into_the_username_field(String username) {
         Runner.loginPage.username.sendKeys(username);
     }
 
-    @When("The User enters {password} into the password field")
-    public void the_User_enters_notapass_into_the_password_field(String password) {
+    @When("The User enters {string} into the password field")
+    public void the_User_enters_into_the_password_field(String password) {
         Runner.loginPage.password.sendKeys(password);
     }
 
@@ -28,14 +28,13 @@ public class LoginSteps {
         Runner.loginPage.signin.click();
     }
 
-    @Then("An alert should say {alert}")
-    public void an_alert_should_say_Please_enter_a_valid_username_and_password(String alert) {
-        Assert.assertEquals(Runner.loginPage.alert.getAttribute("value"), alert);
+    @Then("An alert should say {string}")
+    public void an_alert_should_say(String alert) {
+        Assert.assertEquals(Runner.loginPage.alert.getText(), alert);
     }
 
-    @Then("Then The title should be {title}")
-    public void then_The_title_should_be_Login(String title) {
-        // Write code here that turns the phrase above into concrete actions
+    @Then("The title should be {string}")
+    public void the_Title_Should_Be(String title) {
         Assert.assertEquals(Runner.driver.getTitle(), title);
     }
 }
