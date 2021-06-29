@@ -6,11 +6,11 @@ Feature: User is able to login
     When The User enters <password> into the password field
     When The User clicks on the sign-in button
     Then An alert should say <alert>
-    Then Then The title should be <title>
+    Then The title should be <title>
 
     Examples:
       | username | password | alert | title |
-      | notauser | notapass | Please enter a valid username and password. | Login |
+      | "notauser" | "notapass" | "Please enter a valid username and password." | "Login" |
 
   Scenario Outline: Login to the employee reimbursement application
     Given The User is on the login page
@@ -22,5 +22,5 @@ Feature: User is able to login
 
     Examples:
       | username | password | title |
-      | user | pass | Profile |
-      | user1 | pass2| Profile |
+      | "user" | "pass" | "Profile" |
+      | "user1" | "pass2" | "Profile" |

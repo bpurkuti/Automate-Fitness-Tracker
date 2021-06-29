@@ -14,7 +14,7 @@ import java.io.File;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features", glue = "dev.quadsquad.steps")
+@CucumberOptions(features = "classpath:features", glue = "dev.marker.steps")
 public class Runner {
 
     public static WebDriver driver = null;

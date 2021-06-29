@@ -7,7 +7,7 @@ Feature: User is able to create an account
 
     Examples:
       | title |
-      | Sign Up |
+      | "Sign Up" |
 
   Scenario Outline: Successful Account creation
     Given The User is on the sign-up page
@@ -21,12 +21,12 @@ Feature: User is able to create an account
     When The User selects <sex> from the sex dropdown
     When The User enters <age> into the age field
     When The User clicks on the sign-up button
-    Then Then The title should be <title>
+    Then The title should be <title>
 
     Examples:
       | firstname | lastname | username | password | confirmPassword | height | weight | sex | age | title |
-      | Wolf  | Ryan | wryan | pass | pass | 75 | 175 | M | 24 | Profile |
-      | Johnny | Test | jtest | pass | pass |  |  |  |  | Profile        |
+      | "Wolf"  | "Ryan" | "wryan" | "pass" | "pass" | "75" | "175" | "M" | "24" | "Profile" |
+      | "Johnny" | "Test" | "jtest" | "pass" | "pass" | "" | "" | "" | "" | "Profile" |
 
 
   Scenario Outline: Unsuccessful Account creation
@@ -42,9 +42,20 @@ Feature: User is able to create an account
     When The User enters <age> into the age field
     When The User clicks on the sign-up button
     Then An alert should say <alert>
-    Then Then The title should be <title>
+    Then The title should be <title>
     Examples:
       | firstname | lastname | username | password | confirmPassword | height | weight | sex | age | alert | title |
-      |  |  | jtest | pass | pass |  |  |  |  | Please enter data into all required fields | Sign up |
-      | Johnny | Test | jtest | pass | notpass |  |  |  |  | Please enter data into all required fields | Sign up |
-      | Johnny | Test |  | pass | notpass |  |  |  |  | Please enter data into all required fields | Sign up |
+      | "" | "" | "jtest" | "pass" | "pass" | "" | "" | "" | "" | "Please enter data into all required fields" | "Sign up" |
+      | "Johnny" | "Test" | "jtest" | "pass" | "notpass" | "" | "" | "" | "" | "Please enter data into all required fields" | "Sign up" |
+      | "Johnny" | "Test" |  | "pass" | "notpass" | "" | "" | "" | "" | "Please enter data into all required fields" | "Sign up" |
+
+  Scenario Outline: Go back to the sign-in page
+    Given The User is on the login page
+    When The User clicks on the sign-up button
+    Then The title should be <title>
+    When The User clicks on the sign-in button
+    Then The title should be <title2>
+
+    Examples:
+      | title | title2 |
+      | "Sign Up" |  "Login" |
