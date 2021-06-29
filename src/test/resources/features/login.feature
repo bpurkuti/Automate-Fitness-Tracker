@@ -7,6 +7,8 @@ Feature: User is able to login
     When The User clicks on the sign-in button
     Then An alert should say <alert>
     Then The title should be <title>
+    Then The username field should be empty
+    Then The password field should be empty
 
     Examples:
       | username | password | alert | title |
@@ -22,5 +24,5 @@ Feature: User is able to login
 
     Examples:
       | username | password | title |
-      | "user" | "pass" | "Profile" |
-      | "user1" | "pass2" | "Profile" |
+      | "wryan" | "pass" | "Profile" |
+      | "jtest" | "pass" | "Profile" |

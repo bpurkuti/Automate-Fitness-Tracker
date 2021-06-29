@@ -11,7 +11,7 @@ public class SignupSteps {
 
     @Given("The User is on the sign-up page")
     public void the_User_is_on_the_sign_up_page() {
-        Runner.driver.get("");
+        Runner.driver.get("SIGNUP URL");
     }
 
     @When("The User clicks on the sign-up button")
