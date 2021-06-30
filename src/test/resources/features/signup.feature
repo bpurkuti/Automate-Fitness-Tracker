@@ -16,7 +16,7 @@ Feature: User is able to create an account
 
     Examples:
       | firstname | lastname | username | password | confirmPassword | height | weight | sex | age | title |
-      | "Wolf"  | "Ryan" | "wryan" | "pass" | "pass" | "75" | "175" | "male" | "24" | "Routines" |
+      | "Bobby"  | "Jones" | "bjones" | "pass" | "pass" | "75" | "175" | "male" | "24" | "Routines" |
       | "Johnny" | "Test" | "jtest" | "pass" | "pass" | "" | "" | "" | "female" | "Routines" |
 
 

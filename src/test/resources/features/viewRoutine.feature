@@ -22,7 +22,7 @@ Feature: User is able to view/start a routine
       | "Routines" |
 
   Scenario Outline: Complete a cardio routine--CONTINUE ONCE FRONT END FINISHED--
-    Given The User is on the profile page
+    Given The User is on the dashboard page
     When The User clicks on a routine button <routine>
     Then The routine name should be <routine_name>
     Then The exercise name should be <exercise_name>

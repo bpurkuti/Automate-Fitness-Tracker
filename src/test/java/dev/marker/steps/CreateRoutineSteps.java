@@ -9,7 +9,7 @@ import org.junit.Assert;
 public class CreateRoutineSteps {
     @Given("The User is on the create routine page")
     public void the_User_is_on_the_create_routine_page() {
-        Runner.driver.get("CREATE URI");
+        Runner.driver.get("https://quadsquad.s3.amazonaws.com/create_routine.html");
     }
 
     @When("The User enters {string} into the routine name field")

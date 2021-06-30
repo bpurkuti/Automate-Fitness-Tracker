@@ -14,7 +14,7 @@ Feature: User is able to access their profile page
       | "jtest" | "pass" | "Routines" | "Welcome Johnny Test" |
 
   Scenario Outline: Access the create routine page
-    Given The User is on the profile page
+    Given The User is on the dashboard page
     When The User clicks on the new routine button
     Then The title should be <title>
 
@@ -23,7 +23,7 @@ Feature: User is able to access their profile page
       | "Create Routine" |
 
   Scenario Outline: Access the view/start routine page
-    Given The User is on the profile page
+    Given The User is on the dashboard page
     When The User clicks on a routine button <routine>
     Then The title should be <title>
 
@@ -33,7 +33,7 @@ Feature: User is able to access their profile page
       | "routine2" | "View/Start Routine" |
 
   Scenario Outline: User is able to logout
-    Given The User is on the profile page
+    Given The User is on the dashboard page
     When The User clicks on the logout button
     Then The title should be <title>
 
