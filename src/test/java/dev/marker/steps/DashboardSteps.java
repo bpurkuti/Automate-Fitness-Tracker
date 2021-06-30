@@ -8,9 +8,9 @@ import org.junit.Assert;
 
 public class DashboardSteps {
 
-    @Given("The User is on the profile page")
+    @Given("The User is on the dashboard page")
     public void the_User_is_on_the_profile_page() {
-        Runner.driver.get("PROFILE URI");
+        Runner.driver.get("https://quadsquad.s3.amazonaws.com/dashboard.html");
     }
 
     @When("The User clicks on the new routine button")

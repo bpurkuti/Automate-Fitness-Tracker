@@ -10,7 +10,7 @@ public class ViewRoutineSteps {
 
     @Given("The User is on the view routine page")
     public void the_User_is_on_the_view_routine_page() {
-        Runner.driver.get("VIEW URI");
+        Runner.driver.get("https://quadsquad.s3.amazonaws.com/view_routine.html");
     }
 
     @Then("The routine name should be {string}")

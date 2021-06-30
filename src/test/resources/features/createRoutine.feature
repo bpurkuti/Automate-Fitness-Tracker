@@ -11,11 +11,10 @@ Feature: User is able to create a routine
 
     Examples:
       | username | password | greeting | title |
-      | "wryan" | "pass" | "Welcome Wolf Ryan"  | "Create Routine" |
       | "jtest" | "pass" | "Welcome Johnny Test" | "Create Routine" |
 
   Scenario Outline: Attempt to create a new cardio routine
-    Given The User is on the create routine page
+    Given The User is on the dashboard page
     When The User enters <name> into the routine name field
     When The User selects an exercise <exercise>
     When The User clicks on the add button
