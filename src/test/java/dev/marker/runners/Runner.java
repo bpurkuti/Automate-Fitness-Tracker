@@ -1,7 +1,6 @@
 package dev.marker.runners;
 
-import dev.marker.poms.LoginPage;
-import dev.marker.poms.SignupPage;
+import dev.marker.poms.*;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
@@ -20,6 +19,9 @@ public class Runner {
     public static WebDriver driver = null;
     public static LoginPage loginPage = null;
     public static SignupPage signupPage = null;
+    public static ProfilePage profilePage = null;
+    public static CreateRoutinePage createRoutinePage = null;
+    public static ViewRoutinePage viewRoutinePage = null;
 
 
     @BeforeClass
@@ -29,6 +31,9 @@ public class Runner {
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         signupPage = new SignupPage(driver);
+        profilePage = new ProfilePage(driver);
+        createRoutinePage = new CreateRoutinePage(driver);
+        viewRoutinePage = new ViewRoutinePage(driver);
     }
 
     @AfterClass

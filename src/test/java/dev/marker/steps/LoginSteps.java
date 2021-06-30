@@ -10,7 +10,7 @@ public class LoginSteps {
 
     @Given("The User is on the login page")
     public void the_User_is_on_the_login_page() {
-        Runner.driver.get("");//LOGIN URI
+        Runner.driver.get("LOGIN URI");//LOGIN URI
     }
 
     @When("The User enters {string} into the username field")
@@ -36,5 +36,15 @@ public class LoginSteps {
     @Then("The title should be {string}")
     public void the_Title_Should_Be(String title) {
         Assert.assertEquals(Runner.driver.getTitle(), title);
+    }
+
+    @Then("The username field should be empty")
+    public void the_Username_Field_Should_Be_Empty() {
+        Assert.assertEquals(Runner.loginPage.username.getText(), "");
+    }
+
+    @Then("The password field should be empty")
+    public void the_Password_Field_Should_Be_Empty() {
+        Assert.assertEquals(Runner.loginPage.password.getText(), "");
     }
 }
