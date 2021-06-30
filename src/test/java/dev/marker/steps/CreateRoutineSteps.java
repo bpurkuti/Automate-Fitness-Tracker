@@ -62,9 +62,9 @@ public class CreateRoutineSteps {
         Runner.createRoutinePage.create.click();
     }
 
-    @When("The User clicks the back button")
+    @When("The User clicks the home button")
     public void the_User_clicks_the_back_button() {
-        Runner.createRoutinePage.back.click();
+        Runner.createRoutinePage.home.click();
     }
 
 }

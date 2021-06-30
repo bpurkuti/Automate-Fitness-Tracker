@@ -6,17 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProfilePage {
+public class DashboardPage {
 
     private WebDriver driver;
 
-    public ProfilePage(WebDriver driver){
+    public DashboardPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     //temp ids --- NOT YET IMPL ---
-    @FindBy(id = "logout")
+    @FindBy(id = "navlogout")
     public WebElement logout;
 
     @FindBy(id = "greeting")
@@ -27,7 +27,7 @@ public class ProfilePage {
         return driver.findElement(By.id(id));
     }
 
-    @FindBy(id = "new-Route")
+    @FindBy(id = "addroutinebtn")
     public WebElement newRoute;
 
     @FindBy(xpath = "ROUTINE HISTORY TABLE")

@@ -11,7 +11,7 @@ public class SignupSteps {
 
     @Given("The User is on the sign-up page")
     public void the_User_is_on_the_sign_up_page() {
-        Runner.driver.get("SIGNUP URI");
+        Runner.driver.get("https://quadsquad.s3.amazonaws.com/signup.html");
     }
 
     @When("The User clicks on the sign-up button")
@@ -44,9 +44,9 @@ public class SignupSteps {
         Runner.signupPage.weight.sendKeys(weight);
     }
 
-    @When("The User selects {string} from the sex dropdown")
+    @When("The User selects the sex {string}")
     public void the_User_selects_from_the_sex_dropdown(String sex) {
-        Runner.signupPage.sex.sendKeys(sex);
+        Runner.signupPage.sex(sex).click();
     }
 
     @When("The User enters {string} into the age field")

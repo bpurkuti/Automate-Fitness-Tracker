@@ -10,7 +10,7 @@ public class LoginSteps {
 
     @Given("The User is on the login page")
     public void the_User_is_on_the_login_page() {
-        Runner.driver.get("LOGIN URI");
+        Runner.driver.get("https://quadsquad.s3.amazonaws.com/login.html");
     }
 
     @When("The User enters {string} into the username field")

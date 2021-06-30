@@ -24,8 +24,8 @@ Feature: User is able to login
 
     Examples:
       | username | password | title |
-      | "wryan" | "pass" | "Profile" |
-      | "jtest" | "pass" | "Profile" |
+      | "wryan" | "pass" | "Routines" |
+      | "jtest" | "pass" | "Routines" |
 
   Scenario Outline: Access the sign-up page
     Given The User is on the login page
@@ -34,4 +34,4 @@ Feature: User is able to login
 
     Examples:
       | title |
-      | "Sign Up" |
+      | "Signup" |

@@ -15,11 +15,11 @@ Feature: User is able to view/start a routine
 
   Scenario Outline: User able to go back a page
     Given The User is on the view routine page
-    When The User clicks the back button
+    When The User clicks the home button
     Then The title should be <title>
     Examples:
       | title |
-      | "Profile" |
+      | "Routines" |
 
   Scenario Outline: Complete a cardio routine--CONTINUE ONCE FRONT END FINISHED--
     Given The User is on the profile page

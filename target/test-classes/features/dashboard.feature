@@ -10,8 +10,8 @@ Feature: User is able to access their profile page
 
     Examples:
       | username | password | title | greeting |
-      | "wryan" | "pass" | "Profile" | "Welcome Wolf Ryan"  |
-      | "jtest" | "pass" | "Profile" | "Welcome Johnny Test" |
+      | "wryan" | "pass" | "Routines" | "Welcome Wolf Ryan"  |
+      | "jtest" | "pass" | "Routines" | "Welcome Johnny Test" |
 
   Scenario Outline: Access the create routine page
     Given The User is on the profile page

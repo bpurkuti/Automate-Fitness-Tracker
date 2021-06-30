@@ -15,7 +15,7 @@ public class CreateRoutinePage {
     }
 
     //temp ids --- NOT YET IMPL ---
-    @FindBy(id = "logout")
+    @FindBy(id = "navlogout")
     public WebElement logout;
 
     @FindBy(id = "routine-name")
@@ -51,6 +51,6 @@ public class CreateRoutinePage {
     @FindBy(id = "create")
     public WebElement create;
 
-    @FindBy(id = "back")
-    public WebElement back;
+    @FindBy(id = "navhome")
+    public WebElement home;
 }
