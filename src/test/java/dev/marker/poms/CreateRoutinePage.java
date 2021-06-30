@@ -24,6 +24,15 @@ public class CreateRoutinePage {
     @FindBy(id = "exercise")
     public WebElement exercise;
 
+    @FindBy(id = "add")
+    public WebElement add;
+
+    @FindBy(id = "data-form")
+    public WebElement dataForm;
+
+    @FindBy(id = "exercise-name-text")
+    public WebElement exerciseNameText;
+
     @FindBy(id = "description")
     public WebElement description;
 
@@ -41,4 +50,7 @@ public class CreateRoutinePage {
 
     @FindBy(id = "create")
     public WebElement create;
+
+    @FindBy(id = "back")
+    public WebElement back;
 }

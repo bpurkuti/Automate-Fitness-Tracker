@@ -29,8 +29,8 @@ Feature: User is able to access their profile page
 
     Examples:
       | routine | title |
-      | "testRout1" | "View/Start Routine" |
-      | "testRout2" | "View/Start Routine" |
+      | "routine1" | "View/Start Routine" |
+      | "routine2" | "View/Start Routine" |
 
   Scenario Outline: User is able to logout
     Given The User is on the profile page

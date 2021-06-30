@@ -21,12 +21,6 @@ public class LoginPage {
     @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy(id = "submit")
-    public WebElement submit;
-
-    @FindBy(id = "create-acct")
-    public WebElement createAcct;
-
     @FindBy(id = "signin")
     public WebElement signin;
 
