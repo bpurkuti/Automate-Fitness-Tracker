@@ -53,13 +53,13 @@ Feature: User is able to create a routine
       | "I'm Gettin' Ripped Tonight" | "Deadlift" | "Deadlift" | "Generic Description Here" | "400" | "1" | "Create Routine" | "Routine Creation Successful." |
       | "Fail Test" | "" | "" | "" | "" | "" | "Create Routine" | "Error. Please Enter Data into all Available Fields." |
 
-  Scenario Outline: User able to go back a page
+  Scenario Outline: User able to go back to home
     Given The User is on the create routine page
-    When The User clicks the back button
+    When The User clicks the home button
     Then The title should be <title>
     Examples:
       | title |
-      | "Profile" |
+      | "Routines" |
 
 
   Scenario Outline: User is able to logout

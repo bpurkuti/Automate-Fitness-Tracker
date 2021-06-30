@@ -21,12 +21,12 @@ public class LoginPage {
     @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy(id = "signin")
+    @FindBy(id = "loginbtn")
     public WebElement signin;
 
-    @FindBy(id = "signup")
+    @FindBy(id = "signupbtn")
     public WebElement signup;
 
-    @FindBy(id = "alert")
+    @FindBy(id = "loginerror")
     public WebElement alert;
 }

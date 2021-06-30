@@ -1,5 +1,6 @@
 package dev.marker.poms;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +28,7 @@ public class SignupPage {
     @FindBy(id = "password")
     public WebElement password;
 
-    @FindBy(id = "reenter-password")
+    @FindBy(id = "confirmpassword")
     public WebElement reenterPassword;
 
     @FindBy(id = "height")
@@ -36,13 +37,15 @@ public class SignupPage {
     @FindBy(id = "weight")
     public WebElement weight;
 
-    @FindBy(id = "sex")
-    public WebElement sex;
+    //Will dynamically find the selected sex"
+    public WebElement sex(String id){
+        return driver.findElement(By.id(id));
+    }
 
     @FindBy(id = "age")
     public WebElement age;
 
-    @FindBy(id = "signup")
+    @FindBy(id = "signupbtn")
     public WebElement signup;
 
     @FindBy(id = "signin")

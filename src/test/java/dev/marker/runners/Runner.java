@@ -13,13 +13,13 @@ import java.io.File;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features", glue = "dev.marker.steps")
+@CucumberOptions(features = "classpath:features/signup.feature", glue = "dev.marker.steps")
 public class Runner {
 
     public static WebDriver driver = null;
     public static LoginPage loginPage = null;
     public static SignupPage signupPage = null;
-    public static ProfilePage profilePage = null;
+    public static DashboardPage dashboardPage = null;
     public static CreateRoutinePage createRoutinePage = null;
     public static ViewRoutinePage viewRoutinePage = null;
 
@@ -31,7 +31,7 @@ public class Runner {
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         signupPage = new SignupPage(driver);
-        profilePage = new ProfilePage(driver);
+        dashboardPage = new DashboardPage(driver);
         createRoutinePage = new CreateRoutinePage(driver);
         viewRoutinePage = new ViewRoutinePage(driver);
     }
