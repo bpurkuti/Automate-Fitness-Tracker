@@ -42,6 +42,9 @@ public class ViewRoutinePage {
     @FindBy(id = "next-exercise")
     public WebElement nextExercise;
 
+    @FindBy(id = "routine-name")
+    public WebElement routineName;
+
     @FindBy(id = "complete")
     public WebElement complete;
 }

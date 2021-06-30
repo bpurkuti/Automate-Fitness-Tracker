@@ -26,3 +26,12 @@ Feature: User is able to login
       | username | password | title |
       | "wryan" | "pass" | "Profile" |
       | "jtest" | "pass" | "Profile" |
+
+  Scenario Outline: Access the sign-up page
+    Given The User is on the login page
+    When The User clicks on the sign-up button
+    Then The title should be <title>
+
+    Examples:
+      | title |
+      | "Sign Up" |

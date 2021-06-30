@@ -1,14 +1,5 @@
 Feature: User is able to create an account
 
-  Scenario Outline: Access the sign-up page
-    Given The User is on the login page
-    When The User clicks on the sign-up button
-    Then The title should be <title>
-
-    Examples:
-      | title |
-      | "Sign Up" |
-
   Scenario Outline: Successful Account creation
     Given The User is on the sign-up page
     When The User enters <firstname> into the firstname field
