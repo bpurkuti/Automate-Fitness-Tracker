@@ -18,10 +18,10 @@ public class ViewRoutinePage {
     @FindBy(id = "logout")
     public WebElement logout;
 
-    @FindBy(id = "start")
+    @FindBy(id = "startbtn")
     public WebElement start;
 
-    @FindBy(id = "exercise")
+    @FindBy(id = "exercisename")
     public WebElement exercise;
 
     @FindBy(id = "description")
@@ -39,12 +39,18 @@ public class ViewRoutinePage {
     @FindBy(id = "reps")
     public WebElement reps;
 
-    @FindBy(id = "next-exercise")
+    @FindBy(id = "sets")
+    public WebElement sets;
+
+    @FindBy(id = "prevexercisename")
+    public WebElement prevExercise;
+
+    @FindBy(id = "nextexercisename")
     public WebElement nextExercise;
 
-    @FindBy(id = "routine-name")
+    @FindBy(id = "routinename")
     public WebElement routineName;
 
-    @FindBy(id = "complete")
+    @FindBy(id = "completebtn")
     public WebElement complete;
 }

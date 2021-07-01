@@ -18,39 +18,21 @@ public class CreateRoutinePage {
     @FindBy(id = "navlogout")
     public WebElement logout;
 
-    @FindBy(id = "routine-name")
+    @FindBy(id = "routinename")
     public WebElement routineName;
 
-    @FindBy(id = "exercise")
+    @FindBy(id = "inputexercise")
     public WebElement exercise;
 
     @FindBy(id = "add")
     public WebElement add;
-
-    @FindBy(id = "data-form")
-    public WebElement dataForm;
-
-    @FindBy(id = "exercise-name-text")
-    public WebElement exerciseNameText;
-
-    @FindBy(id = "description")
-    public WebElement description;
-
-    @FindBy(id = "video")
-    public WebElement video;
-
-    @FindBy(id = "duration")
-    public WebElement duration;
-
-    @FindBy(id = "weight")
-    public WebElement weight;
-
-    @FindBy(id = "reps")
-    public WebElement reps;
 
     @FindBy(id = "create")
     public WebElement create;
 
     @FindBy(id = "navhome")
     public WebElement home;
+
+    @FindBy(id = "filterbytype")
+    public WebElement typeFilter;
 }

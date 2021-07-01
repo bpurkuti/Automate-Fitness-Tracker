@@ -7,17 +7,15 @@ Feature: User is able to access their profile page
     When The User clicks on the sign-in button
     Then The title should be <title>
     Then The greeting should say <greeting>
-
     Examples:
       | username | password | title | greeting |
-      | "wryan" | "pass" | "Routines" | "Welcome Wolf Ryan"  |
-      | "jtest" | "pass" | "Routines" | "Welcome Johnny Test" |
+      | "wryan" | "pass" | "Dashboard" | "Welcome Wolf Ryan"  |
+      | "jtest" | "pass" | "Dashboard" | "Welcome Johnny Test" |
 
   Scenario Outline: Access the create routine page
     Given The User is on the dashboard page
     When The User clicks on the new routine button
     Then The title should be <title>
-
     Examples:
       | title |
       | "Create Routine" |
@@ -26,7 +24,6 @@ Feature: User is able to access their profile page
     Given The User is on the dashboard page
     When The User clicks on a routine button <routine>
     Then The title should be <title>
-
     Examples:
       | routine | title |
       | "routine1" | "View/Start Routine" |
@@ -36,7 +33,6 @@ Feature: User is able to access their profile page
     Given The User is on the dashboard page
     When The User clicks on the logout button
     Then The title should be <title>
-
     Examples:
       | title |
       | "Login" |

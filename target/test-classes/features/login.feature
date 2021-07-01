@@ -9,7 +9,6 @@ Feature: User is able to login
     Then The title should be <title>
     Then The username field should be empty
     Then The password field should be empty
-
     Examples:
       | username | password | alert | title |
       | "notauser" | "notapass" | "Please enter a valid username and password." | "Login" |
@@ -20,18 +19,15 @@ Feature: User is able to login
     When The User enters <password> into the password field
     When The User clicks on the sign-in button
     Then The title should be <title>
-
-
     Examples:
       | username | password | title |
-      | "wryan" | "pass" | "Routines" |
-      | "jtest" | "pass" | "Routines" |
+      | "wryan" | "pass" | "Dashboard" |
+      | "jtest" | "pass" | "Dashboard" |
 
   Scenario Outline: Access the sign-up page
     Given The User is on the login page
     When The User clicks on the sign-up button
     Then The title should be <title>
-
     Examples:
       | title |
       | "Signup" |

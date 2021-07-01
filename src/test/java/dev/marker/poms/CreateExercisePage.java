@@ -26,7 +26,7 @@ public class CreateExercisePage {
     @FindBy(id = "exercisetype")
     public WebElement exercisetype;
 
-    @FindBy(id = "videlink")
+    @FindBy(id = "videolink")
     public WebElement videolink;
 
     @FindBy(id = "description")
