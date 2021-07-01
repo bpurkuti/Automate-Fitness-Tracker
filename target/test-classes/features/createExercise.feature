@@ -8,7 +8,6 @@ Feature: Admin is able to create an exercise
     Then The greeting should say <greeting>
     When The User clicks on the new routine button
     Then The title should be <title>
-
     Examples:
       | username | password | greeting | title |
       | "wryan" | "pass" | "Welcome Wolf Ryan" | "Create Exercise" |
@@ -21,7 +20,6 @@ Feature: Admin is able to create an exercise
     When The User enters <description> into the description field
     When The User clicks on the submit button
     Then The title should be <title>
-
     Examples:
       | exercise | type | video | description | title |
       | "Jogging" | "Cardio" | "https://youtu.be/dQw4w9WgXcQ" | "Test Description" | "Create Exercise" |
@@ -37,7 +35,6 @@ Feature: Admin is able to create an exercise
     When The User clicks on the submit button
     Then The title should be <title>
     Then An alert should say <alert>
-
     Examples:
       | exercise | type | video | description | title | alert |
       | "" | "Cardio" | "https://youtu.be/dQw4w9WgXcQ" | "Test Description" | "Create Exercise" | "Error... All fields must be filled in order to submit" |
@@ -49,7 +46,6 @@ Feature: Admin is able to create an exercise
     Given The User is on the dashboard page
     When The User clicks on the logout button
     Then The title should be <title>
-
     Examples:
       | title |
       | "Login" |

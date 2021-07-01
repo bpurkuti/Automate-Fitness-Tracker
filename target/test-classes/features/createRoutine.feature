@@ -8,64 +8,70 @@ Feature: User is able to create a routine
     Then The greeting should say <greeting>
     When The User clicks on the new routine button
     Then The title should be <title>
-
     Examples:
       | username | password | greeting | title |
       | "jtest" | "pass" | "Welcome Johnny Test" | "Create Routine" |
 
-  Scenario Outline: Attempt to create a new cardio routine
+  Scenario Outline: The User starts to create a routine
     Given The User is on the dashboard page
     When The User enters <name> into the routine name field
+    When The User enters <description> into the description field
+    Examples:
+      | name | description |
+      | "Monday morning routine" | "Morning routine - 8am" |
+
+  Scenario Outline: Attempt to create exercises for the new routine
+    When The User selects the exercise filter <type>
     When The User selects an exercise <exercise>
     When The User clicks on the add button
-    Then The form to enter details should popup
-    Then The exercise name should be <exercise_name>
-    Then The exercise description should say <exercise description>
-    Then The video should exist
-    When The User enters <duration> into the duration field
+    Examples:
+      | type | exercise |
+      | "Cardio" | "Squats" |
+      | "Cardio" | "Bike"    |
+      | "Strength" | "Benchpress" |
+
+
+  Scenario Outline: User fails to create a blank exercise
+    When The User selects an exercise <exercise>
+    Then The title should be <title>
+    Then An alert should say <alert>
+    Examples:
+      | exercise | title | alert |
+      | ""       | "Create Routine" | "Error... Please enter a value for the exercise name" |
+
+  Scenario Outline: User creates the new routine
     When The User clicks on the create button
     Then The title should be <title>
     Then An alert should say <alert>
     Examples:
-      | name | exercise | exercise_name | exercise description | duration | title | alert |
-      | "Daily Jog" | "Jogging" | "Jogging" | "Generic Description Here" | "30" | "Create Routine" | "Routine Creation Successful." |
-      | "Jump Rope Fun" | "Jump Rope" | "Jump Rope" | "Generic Description Here" | "15" | "Create Routine" | "Routine Creation Successful." |
-      | "Fail Test" | "" | "" | "" | "30" | "Create Routine" | "Error. Please Enter Data into all Available Fields." |
+      | title | alert |
+      | "Create Routine" | "Routine successfully created" |
 
-  Scenario Outline: Attempt to create a new strength routine
-    Given The User is on the create routine page
+  Scenario Outline: User fails to create an empty routine
+    Given The User is on the dashboard page
     When The User enters <name> into the routine name field
-    When The User selects an exercise <exercise>
-    When The User clicks on the add button
-    Then The form to enter details should popup
-    Then The exercise name should be <exercise_name>
-    Then The exercise description should say <exercise description>
-    Then The video should exist
-    When The User enters <weight> into the weight field
-    When The User enters <reps> into the reps field
+    When The User enters <description> into the description field
     When The User clicks on the create button
     Then The title should be <title>
     Then An alert should say <alert>
     Examples:
-      | name | exercise | exercise_name | exercise description | weight | reps | title | alert |
-      | "Leg Day" | "Leg Press" | "Leg Press" | "Generic Description Here" | "250" | "15" | "Create Routine" | "Routine Creation Successful." |
-      | "I'm Gettin' Ripped Tonight" | "Deadlift" | "Deadlift" | "Generic Description Here" | "400" | "1" | "Create Routine" | "Routine Creation Successful." |
-      | "Fail Test" | "" | "" | "" | "" | "" | "Create Routine" | "Error. Please Enter Data into all Available Fields." |
+      | name | description | title | alert |
+      | "I'm gettin' ripped tonight" | "Fail Test" | "Create Routine" | "Error... Please enter a value for the exercise name" |
 
-  Scenario Outline: User able to go back to home
+
+  Scenario Outline: User able to go home
     Given The User is on the create routine page
     When The User clicks the home button
     Then The title should be <title>
     Examples:
       | title |
-      | "Routines" |
+      | "Dashboard" |
 
 
   Scenario Outline: User is able to logout
     Given The User is on the create routine page
     When The User clicks on the logout button
     Then The title should be <title>
-
     Examples:
       | title |
       | "Login" |

@@ -30,6 +30,6 @@ public class DashboardPage {
     @FindBy(id = "addroutinebtn")
     public WebElement newRoute;
 
-    @FindBy(xpath = "ROUTINE HISTORY TABLE")
+    @FindBy(id = "ROUTINE HISTORY TABLE")
     public WebElement routineHistory;
 }

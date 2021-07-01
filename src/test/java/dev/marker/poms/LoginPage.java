@@ -15,10 +15,10 @@ public class LoginPage {
     }
 
     //temp ids --- NOT YET IMPL ---
-    @FindBy(id = "username")
+    @FindBy(id = "uname")
     public WebElement username;
 
-    @FindBy(id = "password")
+    @FindBy(id = "pass")
     public WebElement password;
 
     @FindBy(id = "loginbtn")

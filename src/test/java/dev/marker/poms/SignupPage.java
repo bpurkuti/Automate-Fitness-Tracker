@@ -48,9 +48,6 @@ public class SignupPage {
     @FindBy(id = "signupbtn")
     public WebElement signup;
 
-    @FindBy(id = "signin")
-    public WebElement signin;
-
     @FindBy(id = "alert")
     public WebElement alert;
 }

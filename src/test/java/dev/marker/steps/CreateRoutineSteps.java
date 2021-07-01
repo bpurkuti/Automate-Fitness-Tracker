@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.Select;
 
 public class CreateRoutineSteps {
     @Given("The User is on the create routine page")
@@ -19,42 +20,12 @@ public class CreateRoutineSteps {
 
     @When("The User selects an exercise {string}")
     public void the_User_selects_an_exercise(String exercise) {
-        Runner.createRoutinePage.routineName.sendKeys(exercise);
+        Runner.createRoutinePage.exercise.sendKeys(exercise);
     }
 
     @When("The User clicks on the add button")
     public void the_User_clicks_on_the_add_button() {
         Runner.createRoutinePage.add.click();
-    }
-
-    @Then("The form to enter details should popup")
-    public void the_form_to_enter_details_should_popup() {
-        Assert.assertNotEquals(Runner.createRoutinePage.dataForm,null);
-    }
-
-    @Then("The exercise name should be {string}")
-    public void the_exercise_name_should_be(String text) {
-        Assert.assertEquals(Runner.createRoutinePage.exerciseNameText.getText(), text);
-    }
-
-    @Then("The exercise description should say {string}")
-    public void the_exercise_description_should_say(String description) {
-        Assert.assertEquals(Runner.createRoutinePage.description.getText(), description);
-    }
-
-    @Then("The video should exist")
-    public void the_video_should_exist() {
-        Assert.assertNotEquals(Runner.createRoutinePage.video,null);
-    }
-
-    @When("The User enters {string} into the duration field")
-    public void the_User_enters_into_the_duration_field(String duration) {
-        Runner.createRoutinePage.duration.sendKeys(duration);
-    }
-
-    @When("The User enters {string} into the reps field")
-    public void the_User_enters_into_the_reps_field(String reps) {
-        Runner.createRoutinePage.reps.sendKeys(reps);
     }
 
     @When("The User clicks on the create button")
@@ -67,4 +38,8 @@ public class CreateRoutineSteps {
         Runner.createRoutinePage.home.click();
     }
 
+    @When("The User selects the exercise filter {string}")
+    public void the_User_selects_the_exercise_filter(String filter) {
+        new Select(Runner.createRoutinePage.typeFilter).selectByVisibleText(filter);
+    }
 }

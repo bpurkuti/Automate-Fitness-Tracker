@@ -13,11 +13,10 @@ Feature: User is able to create an account
     When The User enters <age> into the age field
     When The User clicks on the sign-up button
     Then The title should be <title>
-
     Examples:
       | firstname | lastname | username | password | confirmPassword | height | weight | sex | age | title |
-      | "Bobby"  | "Jones" | "bjones" | "pass" | "pass" | "75" | "175" | "male" | "24" | "Routines" |
-      | "Johnny" | "Test" | "jtest" | "pass" | "pass" | "" | "" | "" | "female" | "Routines" |
+      | "Bobby"  | "Jones" | "bjones" | "pass" | "pass" | "75" | "175" | "male" | "24" | "Dashboard" |
+      | "Johnny" | "Test" | "jtest" | "pass" | "pass" | "" | "" | "" | "female" | "Dashboard" |
 
 
   Scenario Outline: Unsuccessful Account creation
@@ -46,7 +45,6 @@ Feature: User is able to create an account
     Then The title should be <title>
     When The User clicks on the sign-in button
     Then The title should be <title2>
-
     Examples:
       | title | title2 |
       | "Signup" |  "Login" |
