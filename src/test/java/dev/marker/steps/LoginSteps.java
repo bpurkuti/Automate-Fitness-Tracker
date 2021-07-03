@@ -6,11 +6,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 public class LoginSteps {
 
     @Given("The User is on the login page")
-    public void the_User_is_on_the_login_page() {
+    public void the_User_is_on_the_login_page() throws InterruptedException {
         Runner.driver.get("https://quadsquad.s3.amazonaws.com/login.html");
+        Thread.sleep(500);
     }
 
     @When("The User enters {string} into the username field")
@@ -28,23 +31,25 @@ public class LoginSteps {
         Runner.loginPage.signin.click();
     }
 
-    @Then("An alert should say {string}")
-    public void an_alert_should_say(String alert) {
-        Assert.assertEquals(Runner.loginPage.alert.getText(), alert);
+    @Then("A login alert should appear")
+    public void a_login_alert_should_appear() throws InterruptedException {
+        Thread.sleep(250);
+        Assert.assertNotEquals(Runner.loginPage.loginerror.getText(), "");
     }
 
     @Then("The title should be {string}")
-    public void the_Title_Should_Be(String title) {
+    public void the_Title_Should_Be(String title) throws InterruptedException {
+        Thread.sleep(750);
         Assert.assertEquals(Runner.driver.getTitle(), title);
     }
 
     @Then("The username field should be empty")
-    public void the_Username_Field_Should_Be_Empty() {
+    public void the_username_field_should_be_empty() {
         Assert.assertEquals(Runner.loginPage.username.getText(), "");
     }
 
     @Then("The password field should be empty")
-    public void the_Password_Field_Should_Be_Empty() {
+    public void the_password_field_should_be_empty() {
         Assert.assertEquals(Runner.loginPage.password.getText(), "");
     }
 }

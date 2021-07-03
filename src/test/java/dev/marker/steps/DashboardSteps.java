@@ -9,12 +9,14 @@ import org.junit.Assert;
 public class DashboardSteps {
 
     @Given("The User is on the dashboard page")
-    public void the_User_is_on_the_profile_page() {
+    public void the_User_is_on_the_profile_page() throws InterruptedException {
         Runner.driver.get("https://quadsquad.s3.amazonaws.com/dashboard.html");
+        Thread.sleep(500);
     }
 
     @When("The User clicks on the new routine button")
-    public void the_User_clicks_on_the_new_routine_button() {
+    public void the_User_clicks_on_the_new_routine_button() throws InterruptedException {
+        Thread.sleep(300);
         Runner.dashboardPage.newRoute.click();
     }
 
@@ -29,7 +31,8 @@ public class DashboardSteps {
     }
 
     @Then("The greeting should say {string}")
-    public void the_greeting_should_say(String greeting) {
+    public void the_greeting_should_say(String greeting) throws InterruptedException {
+        Thread.sleep(1000);
         Assert.assertEquals(Runner.dashboardPage.greeting.getText(), greeting);;
     }
 

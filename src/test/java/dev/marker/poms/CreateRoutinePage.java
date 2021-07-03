@@ -24,7 +24,7 @@ public class CreateRoutinePage {
     @FindBy(id = "inputexercise")
     public WebElement exercise;
 
-    @FindBy(id = "add")
+    @FindBy(id = "addexercisebtn")
     public WebElement add;
 
     @FindBy(id = "create")
@@ -33,6 +33,9 @@ public class CreateRoutinePage {
     @FindBy(id = "navhome")
     public WebElement home;
 
-    @FindBy(id = "filterbytype")
+    @FindBy(id = "filterdropdown")
     public WebElement typeFilter;
+
+    @FindBy(id = "datescheduled")
+    public WebElement date;
 }
