@@ -10,10 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features", glue = "dev.marker.steps")
+@CucumberOptions(features = "classpath:features/05createRoutine.feature", glue = "dev.marker.steps")
 public class Runner {
 
     public static WebDriver driver = null;
@@ -36,6 +37,7 @@ public class Runner {
         createRoutinePage = new CreateRoutinePage(driver);
         viewRoutinePage = new ViewRoutinePage(driver);
         createExercisePage = new CreateExercisePage(driver);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
     }
 
     @AfterClass

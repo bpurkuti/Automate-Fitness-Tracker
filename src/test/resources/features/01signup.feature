@@ -6,17 +6,16 @@ Feature: User is able to create an account
     When The User enters <lastname> into the lastname field
     When The User enters <username> into the username field
     When The User enters <password> into the password field
-    When The User enters <confirmPassword> into the confirm password field
     When The User enters <height> into the height field
     When The User enters <weight> into the weight field
-    When The User selects the sex <sex>
+    When The User enters <gender> into the gender field
     When The User enters <age> into the age field
     When The User clicks on the sign-up button
     Then The title should be <title>
     Examples:
-      | firstname | lastname | username | password | confirmPassword | height | weight | sex | age | title |
-      | "Bobby"  | "Jones" | "bjones" | "pass" | "pass" | "75" | "175" | "male" | "24" | "Dashboard" |
-      | "Johnny" | "Test" | "jtest" | "pass" | "pass" | "" | "" | "" | "female" | "Dashboard" |
+      | firstname | lastname | username | password | height | weight | gender | age | title |
+      | "Wolf"  | "Ryan" | "wryan" | "pass" | "75" | "175" | "male" | "24" | "Dashboard" |
+      | "Johnny" | "Test" | "jtest" | "pass" | "" | "" | "female" | "16" | "Dashboard" |
 
 
   Scenario Outline: Unsuccessful Account creation
@@ -25,19 +24,18 @@ Feature: User is able to create an account
     When The User enters <lastname> into the lastname field
     When The User enters <username> into the username field
     When The User enters <password> into the password field
-    When The User enters <confirmPassword> into the confirm password field
     When The User enters <height> into the height field
     When The User enters <weight> into the weight field
-    When The User selects the sex <sex>
+    When The User enters <gender> into the gender field
     When The User enters <age> into the age field
     When The User clicks on the sign-up button
-    Then An alert should say <alert>
+    Then A login alert should appear
     Then The title should be <title>
     Examples:
-      | firstname | lastname | username | password | confirmPassword | height | weight | sex | age | alert | title |
-      | "" | "" | "jtest" | "pass" | "pass" | "" | "" | "" | "" | "Please enter data into all required fields" | "Signup" |
-      | "Johnny" | "Test" | "jtest" | "pass" | "notpass" | "" | "" | "" | "" | "Please enter data into all required fields" | "Signup" |
-      | "Johnny" | "Test" |  | "pass" | "notpass" | "" | "" | "" | "" | "Please enter data into all required fields" | "Signup" |
+      | firstname | lastname | username | password | height | weight | gender | age | title |
+      | "" | "" | "jtest" | "notpass" | "" | "" | "" | "" | "Sign up" |
+      | "Johnny" | "" | "jtest" | "notpass" | "" | "" | "" | "" | "Sign up" |
+      | "Johnny" | "Test" | "" | "notpass" | "" | "" | "" | "" | "Sign up" |
 
   Scenario Outline: Go back to the sign-in page
     Given The User is on the login page
@@ -47,4 +45,4 @@ Feature: User is able to create an account
     Then The title should be <title2>
     Examples:
       | title | title2 |
-      | "Signup" |  "Login" |
+      | "Sign up" |  "Login" |

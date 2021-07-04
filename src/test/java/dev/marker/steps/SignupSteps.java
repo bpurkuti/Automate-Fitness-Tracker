@@ -10,8 +10,9 @@ import org.junit.Assert;
 public class SignupSteps {
 
     @Given("The User is on the sign-up page")
-    public void the_User_is_on_the_sign_up_page() {
+    public void the_User_is_on_the_sign_up_page() throws InterruptedException {
         Runner.driver.get("https://quadsquad.s3.amazonaws.com/signup.html");
+        Thread.sleep(500);
     }
 
     @When("The User clicks on the sign-up button")
@@ -44,9 +45,9 @@ public class SignupSteps {
         Runner.signupPage.weight.sendKeys(weight);
     }
 
-    @When("The User selects the sex {string}")
-    public void the_User_selects_from_the_sex_dropdown(String sex) {
-        Runner.signupPage.sex(sex).click();
+    @When("The User enters {string} into the gender field")
+    public void the_User_selects_from_the_sex_dropdown(String gender) {
+        Runner.signupPage.gender.sendKeys(gender);
     }
 
     @When("The User enters {string} into the age field")

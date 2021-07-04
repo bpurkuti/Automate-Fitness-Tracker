@@ -19,7 +19,7 @@ public class DashboardPage {
     @FindBy(id = "navlogout")
     public WebElement logout;
 
-    @FindBy(id = "greeting")
+    @FindBy(id = "pagetitle")
     public WebElement greeting;
 
     //Will dynamically find the element of "id"

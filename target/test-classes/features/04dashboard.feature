@@ -20,15 +20,6 @@ Feature: User is able to access their profile page
       | title |
       | "Create Routine" |
 
-  Scenario Outline: Access the view/start routine page
-    Given The User is on the dashboard page
-    When The User clicks on a routine button <routine>
-    Then The title should be <title>
-    Examples:
-      | routine | title |
-      | "routine1" | "View/Start Routine" |
-      | "routine2" | "View/Start Routine" |
-
   Scenario Outline: User is able to logout
     Given The User is on the dashboard page
     When The User clicks on the logout button

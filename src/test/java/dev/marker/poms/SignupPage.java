@@ -15,7 +15,6 @@ public class SignupPage {
         PageFactory.initElements(driver, this);
     }
 
-    //temp ids --- NOT YET IMPL ---
     @FindBy(id = "firstname")
     public WebElement firstname;
 
@@ -37,17 +36,12 @@ public class SignupPage {
     @FindBy(id = "weight")
     public WebElement weight;
 
-    //Will dynamically find the selected sex"
-    public WebElement sex(String id){
-        return driver.findElement(By.id(id));
-    }
+    @FindBy(id = "gender")
+    public WebElement gender;
 
     @FindBy(id = "age")
     public WebElement age;
 
     @FindBy(id = "signupbtn")
     public WebElement signup;
-
-    @FindBy(id = "alert")
-    public WebElement alert;
 }

@@ -13,9 +13,8 @@ Feature: User is able to create a routine
       | "jtest" | "pass" | "Welcome Johnny Test" | "Create Routine" |
 
   Scenario Outline: The User starts to create a routine
-    Given The User is on the dashboard page
+    Given The User is on the create routine page
     When The User enters <name> into the routine name field
-    When The User enters <description> into the description field
     Examples:
       | name | description |
       | "Monday morning routine" | "Morning routine - 8am" |
@@ -23,29 +22,30 @@ Feature: User is able to create a routine
   Scenario Outline: Attempt to create exercises for the new routine
     When The User selects the exercise filter <type>
     When The User selects an exercise <exercise>
+    When The User selects the date <date>
     When The User clicks on the add button
     Examples:
-      | type | exercise |
-      | "Cardio" | "Squats" |
-      | "Cardio" | "Bike"    |
-      | "Strength" | "Benchpress" |
+      | type | exercise | date |
+      | "Stretch" | "Full Leg Stretch" | "07/09/2021" |
+      | "Cardio" | "Jogging"    | "07/09/2021" |
+      | "Strength" | "Leg Press" | "07/09/2021" |
 
 
   Scenario Outline: User fails to create a blank exercise
     When The User selects an exercise <exercise>
     Then The title should be <title>
-    Then An alert should say <alert>
+    Then An alert should appear
     Examples:
-      | exercise | title | alert |
-      | ""       | "Create Routine" | "Error... Please enter a value for the exercise name" |
+      | exercise | title |
+      | ""       | "Create Routine" |
 
   Scenario Outline: User creates the new routine
     When The User clicks on the create button
     Then The title should be <title>
-    Then An alert should say <alert>
+    Then An alert should appear
     Examples:
-      | title | alert |
-      | "Create Routine" | "Routine successfully created" |
+      | title |
+      | "Create Routine" |
 
   Scenario Outline: User fails to create an empty routine
     Given The User is on the dashboard page
@@ -53,10 +53,10 @@ Feature: User is able to create a routine
     When The User enters <description> into the description field
     When The User clicks on the create button
     Then The title should be <title>
-    Then An alert should say <alert>
+    Then An alert should appear
     Examples:
-      | name | description | title | alert |
-      | "I'm gettin' ripped tonight" | "Fail Test" | "Create Routine" | "Error... Please enter a value for the exercise name" |
+      | name | description | title |
+      | "I'm gettin' ripped tonight" | "Fail Test" | "Create Routine" |
 
 
   Scenario Outline: User able to go home

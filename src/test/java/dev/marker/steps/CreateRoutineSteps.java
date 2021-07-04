@@ -9,8 +9,9 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CreateRoutineSteps {
     @Given("The User is on the create routine page")
-    public void the_User_is_on_the_create_routine_page() {
+    public void the_User_is_on_the_create_routine_page() throws InterruptedException {
         Runner.driver.get("https://quadsquad.s3.amazonaws.com/create_routine.html");
+        Thread.sleep(1000);
     }
 
     @When("The User enters {string} into the routine name field")
@@ -41,5 +42,10 @@ public class CreateRoutineSteps {
     @When("The User selects the exercise filter {string}")
     public void the_User_selects_the_exercise_filter(String filter) {
         new Select(Runner.createRoutinePage.typeFilter).selectByVisibleText(filter);
+    }
+
+    @When("The User selects the date {string}")
+    public void the_User_selects_the_date(String date) {
+        Runner.createRoutinePage.date.sendKeys(date);
     }
 }

@@ -2,14 +2,17 @@ package dev.marker.steps;
 
 import dev.marker.runners.Runner;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
 public class CreateExerciseSteps {
 
     @Given("The User is on the create exercise page")
-    public void the_User_is_on_the_create_exercise_page() {
+    public void the_User_is_on_the_create_exercise_page() throws InterruptedException {
         Runner.driver.get("https://quadsquad.s3.amazonaws.com/create_exercise.html");
+        Thread.sleep(500);
     }
 
     @When("The User enters {string} into the exercise name field")
@@ -35,6 +38,12 @@ public class CreateExerciseSteps {
     @When("The User clicks on the submit button")
     public void the_User_clicks_on_the_submit_button() {
         Runner.createExercisePage.submit.click();
+    }
+
+    @Then("An alert should appear")
+    public void an_alert_should_appear() throws InterruptedException {
+        Thread.sleep(250);
+        Assert.assertNotEquals(Runner.createExercisePage.submitmsg.getText(), "");
     }
 
 }
