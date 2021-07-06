@@ -16,8 +16,6 @@ import java.util.concurrent.TimeUnit;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"classpath:features"}, glue = "dev.marker.steps")
 public class Runner {
-    //"classpath:features/01signup.feature", "classpath:features/02createExercise.feature", "classpath:features/03login.feature",
-    //        "classpath:features/04dashboard.feature", "classpath:features/05createRoutine.feature"
 
     public static WebDriver driver = null;
     public static LoginPage loginPage = null;
