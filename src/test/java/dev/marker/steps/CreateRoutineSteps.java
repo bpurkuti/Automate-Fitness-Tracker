@@ -25,13 +25,16 @@ public class CreateRoutineSteps {
     }
 
     @When("The User clicks on the add button")
-    public void the_User_clicks_on_the_add_button() {
+    public void the_User_clicks_on_the_add_button() throws InterruptedException {
         Runner.createRoutinePage.add.click();
+        Thread.sleep(500);
     }
 
     @When("The User clicks on the create button")
-    public void the_User_clicks_on_the_create_button() {
+    public void the_User_clicks_on_the_create_button() throws InterruptedException {
+
         Runner.createRoutinePage.create.click();
+        Thread.sleep(1000);
     }
 
     @When("The User clicks the home button")

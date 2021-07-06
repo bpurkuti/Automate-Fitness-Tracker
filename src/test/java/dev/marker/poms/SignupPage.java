@@ -21,12 +21,6 @@ public class SignupPage {
     @FindBy(id = "lastname")
     public WebElement lastname;
 
-    @FindBy(id = "username")
-    public WebElement username;
-
-    @FindBy(id = "password")
-    public WebElement password;
-
     @FindBy(id = "confirmpassword")
     public WebElement reenterPassword;
 

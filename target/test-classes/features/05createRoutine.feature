@@ -31,14 +31,6 @@ Feature: User is able to create a routine
       | "Strength" | "Leg Press" | "07/09/2021" |
 
 
-  Scenario Outline: User fails to create a blank exercise
-    When The User clicks on the add button
-    Then The title should be <title>
-    Then An error alert should appear
-    Examples:
-      | title |
-      | "Create Routine" |
-
   Scenario Outline: User creates the new routine
     When The User clicks on the create button
     Then The title should be <title>

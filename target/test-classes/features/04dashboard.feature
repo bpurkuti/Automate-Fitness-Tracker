@@ -1,6 +1,6 @@
-Feature: User is able to access their profile page
+Feature: User is able to access their dashboard
 
-  Scenario Outline: Login and access the profile page
+  Scenario Outline: Login and access the dashboard
     Given The User is on the login page
     When The User enters <username> into the username field
     When The User enters <password> into the password field

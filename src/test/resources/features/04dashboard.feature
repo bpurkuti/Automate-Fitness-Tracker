@@ -1,6 +1,6 @@
-Feature: User is able to access their profile page
+Feature: User is able to access their dashboard
 
-  Scenario Outline: Login and access the profile page
+  Scenario Outline: Login and access the dashboard
     Given The User is on the login page
     When The User enters <username> into the username field
     When The User enters <password> into the password field
@@ -19,15 +19,6 @@ Feature: User is able to access their profile page
     Examples:
       | title |
       | "Create Routine" |
-
-  Scenario Outline: Access the view/start routine page
-    Given The User is on the dashboard page
-    When The User clicks on a routine button <routine>
-    Then The title should be <title>
-    Examples:
-      | routine | title |
-      | "routine1" | "View/Start Routine" |
-      | "routine2" | "View/Start Routine" |
 
   Scenario Outline: User is able to logout
     Given The User is on the dashboard page

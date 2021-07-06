@@ -14,10 +14,6 @@ public class CreateRoutinePage {
         PageFactory.initElements(driver, this);
     }
 
-    //temp ids --- NOT YET IMPL ---
-    @FindBy(id = "navlogout")
-    public WebElement logout;
-
     @FindBy(id = "routinename")
     public WebElement routineName;
 

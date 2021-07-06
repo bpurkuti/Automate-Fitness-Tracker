@@ -47,12 +47,14 @@ public class ViewRoutineSteps {
     }
 
     @When("The User clicks on the complete exercise button")
-    public void the_User_clicks_on_the_complete_exercise_button() {
+    public void the_User_clicks_on_the_complete_exercise_button() throws InterruptedException {
+        Thread.sleep(500);
         Runner.viewRoutinePage.completeExercise.click();
     }
 
     @When("The User clicks on the complete routine button")
-    public void the_User_clicks_on_the_complete_routine_button() {
+    public void the_User_clicks_on_the_complete_routine_button() throws InterruptedException {
+        Thread.sleep(1000);
         Runner.viewRoutinePage.completeRoutine.click();
     }
 

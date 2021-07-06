@@ -18,7 +18,7 @@ Feature: User is able to view/start a routine
     Then The title should be <title>
     Examples:
       | title |
-      | "View/Start Exercise" |
+      | "Dashboard" |
 
   Scenario Outline: Access and view the routine again
     Given The User is on the dashboard page
@@ -47,20 +47,18 @@ Feature: User is able to view/start a routine
       | "300"     | "View/Start Exercise" |
 
   Scenario Outline: User enters data for strength exercises
-    When The User enters <weight> into the duration field
+    When The User enters <weight> into the weight field
     When The User enters <reps> into the reps field
     When The User clicks on the complete exercise button
     When The User clicks on the complete routine button
     Then The title should be <title>
-    When The User clicks the home button
-    Then The title should be <title2>
     Examples:
-      | weight | reps | title | title2 |
-      | "200"     | "8" | "View/Start Exercise" | "Dashboard" |
+      | weight | reps | title |
+      | "200"     | "8" | "Dashboard" |
 
 
   Scenario Outline: User is able to logout
-    Given The User is on the view routine page
+    Given The User is on the dashboard page
     When The User clicks on the logout button
     Then The title should be <title>
     Examples:

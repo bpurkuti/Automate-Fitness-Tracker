@@ -14,10 +14,6 @@ public class ViewRoutinePage {
         PageFactory.initElements(driver, this);
     }
 
-    //temp ids --- NOT YET IMPL ---
-    @FindBy(id = "logout")
-    public WebElement logout;
-
     @FindBy(id = "startbtn")
     public WebElement start;
 
@@ -33,14 +29,8 @@ public class ViewRoutinePage {
     @FindBy(id = "duration")
     public WebElement duration;
 
-    @FindBy(id = "weight")
-    public WebElement weight;
-
     @FindBy(id = "reps")
     public WebElement reps;
-
-    @FindBy(id = "sets")
-    public WebElement sets;
 
     @FindBy(id = "prevexercisename")
     public WebElement prevExercise;
@@ -54,6 +44,6 @@ public class ViewRoutinePage {
     @FindBy(id = "completeexercisebtn")
     public WebElement completeExercise;
 
-    @FindBy(id = "completeeroutinebtn")
+    @FindBy(id = "completeroutinebtn")
     public WebElement completeRoutine;
 }
