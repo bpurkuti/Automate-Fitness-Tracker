@@ -14,12 +14,6 @@ public class CreateExercisePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "navlogout")
-    public WebElement logout;
-
-    @FindBy(id = "greeting")
-    public WebElement greeting;
-
     @FindBy(id = "exercisename")
     public WebElement exercise;
 
@@ -35,7 +29,7 @@ public class CreateExercisePage {
     @FindBy(id = "submitbtn")
     public WebElement submit;
 
-    @FindBy(id = "submitmsg")
-    public WebElement submitmsg;
+    @FindBy(id = "errormsg")
+    public WebElement errormsg;
 
 }

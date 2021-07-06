@@ -41,7 +41,8 @@ public class SignupSteps {
     }
 
     @When("The User enters {string} into the weight field")
-    public void the_User_enters_into_the_weight_field(String weight) {
+    public void the_User_enters_into_the_weight_field(String weight) throws InterruptedException {
+        Thread.sleep(500);
         Runner.signupPage.weight.sendKeys(weight);
     }
 

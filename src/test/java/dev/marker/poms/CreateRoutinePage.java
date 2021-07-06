@@ -14,10 +14,6 @@ public class CreateRoutinePage {
         PageFactory.initElements(driver, this);
     }
 
-    //temp ids --- NOT YET IMPL ---
-    @FindBy(id = "navlogout")
-    public WebElement logout;
-
     @FindBy(id = "routinename")
     public WebElement routineName;
 
@@ -27,7 +23,7 @@ public class CreateRoutinePage {
     @FindBy(id = "addexercisebtn")
     public WebElement add;
 
-    @FindBy(id = "create")
+    @FindBy(id = "submitbtn")
     public WebElement create;
 
     @FindBy(id = "navhome")
@@ -38,4 +34,7 @@ public class CreateRoutinePage {
 
     @FindBy(id = "datescheduled")
     public WebElement date;
+
+    @FindBy(id = "submitmsg")
+    public WebElement submitmsg;
 }

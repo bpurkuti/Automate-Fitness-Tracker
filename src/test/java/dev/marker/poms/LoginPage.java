@@ -24,9 +24,6 @@ public class LoginPage {
     @FindBy(id = "loginbtn")
     public WebElement signin;
 
-    @FindBy(id = "signupbtn")
-    public WebElement signup;
-
     @FindBy(id = "loginerror")
     public WebElement loginerror;
 }

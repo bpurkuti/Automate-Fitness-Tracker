@@ -39,7 +39,7 @@ public class LoginSteps {
 
     @Then("The title should be {string}")
     public void the_Title_Should_Be(String title) throws InterruptedException {
-        Thread.sleep(750);
+        Thread.sleep(1000);
         Assert.assertEquals(Runner.driver.getTitle(), title);
     }
 
