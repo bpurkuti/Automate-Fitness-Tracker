@@ -15,7 +15,7 @@ public class CreateRoutineSteps {
     }
 
     @When("The User enters {string} into the routine name field")
-    public void the_User_enters_into_the_routine_name_field(String rname) {
+    public void the_User_enters_into_the_routine_name_field(String rname) throws InterruptedException {
         Runner.createRoutinePage.routineName.sendKeys(rname);
     }
 
@@ -47,5 +47,11 @@ public class CreateRoutineSteps {
     @When("The User selects the date {string}")
     public void the_User_selects_the_date(String date) {
         Runner.createRoutinePage.date.sendKeys(date);
+    }
+
+    @Then("An alert should appear")
+    public void an_alert_should_appear() throws InterruptedException {
+        Thread.sleep(250);
+        Assert.assertNotEquals(Runner.createRoutinePage.submitmsg.getText(), "");
     }
 }

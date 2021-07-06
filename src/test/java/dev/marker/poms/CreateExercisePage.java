@@ -35,7 +35,7 @@ public class CreateExercisePage {
     @FindBy(id = "submitbtn")
     public WebElement submit;
 
-    @FindBy(id = "submitmsg")
-    public WebElement submitmsg;
+    @FindBy(id = "errormsg")
+    public WebElement errormsg;
 
 }

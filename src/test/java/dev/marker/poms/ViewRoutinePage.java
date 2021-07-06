@@ -51,6 +51,9 @@ public class ViewRoutinePage {
     @FindBy(id = "routinename")
     public WebElement routineName;
 
-    @FindBy(id = "completebtn")
-    public WebElement complete;
+    @FindBy(id = "completeexercisebtn")
+    public WebElement completeExercise;
+
+    @FindBy(id = "completeeroutinebtn")
+    public WebElement completeRoutine;
 }

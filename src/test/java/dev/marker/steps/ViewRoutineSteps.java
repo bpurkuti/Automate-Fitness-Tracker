@@ -31,7 +31,8 @@ public class ViewRoutineSteps {
     }
 
     @When("The User enters {string} into the duration field")
-    public void the_User_enters_into_the_duration_field(String duration) {
+    public void the_User_enters_into_the_duration_field(String duration) throws InterruptedException {
+        Thread.sleep(500);
         Runner.viewRoutinePage.duration.sendKeys(duration);
     }
 
@@ -47,12 +48,12 @@ public class ViewRoutineSteps {
 
     @When("The User clicks on the complete exercise button")
     public void the_User_clicks_on_the_complete_exercise_button() {
-        Runner.viewRoutinePage.complete.click();
+        Runner.viewRoutinePage.completeExercise.click();
     }
 
-    @When("The User enters {string} into the sets field")
-    public void the_User_enters_into_the_sets_field(String sets) {
-        Runner.viewRoutinePage.sets.sendKeys(sets);
+    @When("The User clicks on the complete routine button")
+    public void the_User_clicks_on_the_complete_routine_button() {
+        Runner.viewRoutinePage.completeRoutine.click();
     }
 
     @When("The User enters {string} into the reps field")
@@ -67,7 +68,6 @@ public class ViewRoutineSteps {
 
     @Then("The next exercise should be {string}")
     public void the_next_exercise_should_be(String next) {
-        // Write code here that turns the phrase above into concrete actions
         Assert.assertEquals(Runner.viewRoutinePage.nextExercise.getText(), next);
     }
 

@@ -16,8 +16,8 @@ Feature: User is able to create a routine
     Given The User is on the create routine page
     When The User enters <name> into the routine name field
     Examples:
-      | name | description |
-      | "Monday morning routine" | "Morning routine - 8am" |
+      | name |
+      | "Monday morning routine" |
 
   Scenario Outline: Attempt to create exercises for the new routine
     When The User selects the exercise filter <type>
@@ -32,31 +32,29 @@ Feature: User is able to create a routine
 
 
   Scenario Outline: User fails to create a blank exercise
-    When The User selects an exercise <exercise>
+    When The User clicks on the add button
     Then The title should be <title>
-    Then An alert should appear
+    Then An error alert should appear
     Examples:
-      | exercise | title |
-      | ""       | "Create Routine" |
+      | title |
+      | "Create Routine" |
 
   Scenario Outline: User creates the new routine
     When The User clicks on the create button
     Then The title should be <title>
-    Then An alert should appear
     Examples:
       | title |
       | "Create Routine" |
 
   Scenario Outline: User fails to create an empty routine
-    Given The User is on the dashboard page
+    Given The User is on the create routine page
     When The User enters <name> into the routine name field
-    When The User enters <description> into the description field
     When The User clicks on the create button
     Then The title should be <title>
-    Then An alert should appear
+    Then An error alert should appear
     Examples:
-      | name | description | title |
-      | "I'm gettin' ripped tonight" | "Fail Test" | "Create Routine" |
+      | name | title |
+      | "I'm gettin' ripped tonight" | "Create Routine" |
 
 
   Scenario Outline: User able to go home

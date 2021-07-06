@@ -36,14 +36,15 @@ public class CreateExerciseSteps {
     }
 
     @When("The User clicks on the submit button")
-    public void the_User_clicks_on_the_submit_button() {
+    public void the_User_clicks_on_the_submit_button() throws InterruptedException {
+        Thread.sleep(250);
         Runner.createExercisePage.submit.click();
     }
 
-    @Then("An alert should appear")
-    public void an_alert_should_appear() throws InterruptedException {
-        Thread.sleep(250);
-        Assert.assertNotEquals(Runner.createExercisePage.submitmsg.getText(), "");
+    @Then("An error alert should appear")
+    public void an_error_alert_should_appear() throws InterruptedException {
+        Thread.sleep(500);
+        Assert.assertNotEquals(Runner.createExercisePage.errormsg.getText(), "");
     }
 
 }
